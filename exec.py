@@ -35,8 +35,8 @@ def iter_photos(url):
 
 pics, alb, coll = iter_photos('https://copy-brand.x.yupoo.com/albums')
 print(f'listas contidas: {pics}')
-
-
-with open('photo_teste_2.jpg', 'wb') as f:
-    f.write(get_photos(79583795, 3210698, 'a00cee22'))
-    f.close()
+#
+#
+# with open('photo_teste_2.jpg', 'wb') as f:
+#     f.write(get_photos(79583795, 3210698, 'a00cee22'))
+#     f.close()

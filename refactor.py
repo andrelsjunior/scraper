@@ -26,11 +26,18 @@ def get_products_list(cid):
 
     lst_products = []
 
+    count_element = 0
+
     # print('Album contido na coleção: ' + locals()['cid'])
 
     for i in products.xpath('.//a/@href'):
+
         if "albums/" in i:
-            lst_products.append(i.split('/')[2].split('?')[0])
+            if cid not in lst_products:
+                lst_products.insert(0, cid)
+                lst_products.append(i.split('/')[2].split('?')[0])
+            else:
+                lst_products.append(i.split('/')[2].split('?')[0])
         else:
             pass
     return lst_products
@@ -71,6 +78,6 @@ def get_photos(aid, cid, pid):
 
 
 
-    with open(f'photo_teste.jpg', 'wb') as f:
-        f.write(get_photos())
-        f.close()
+    # with open(f'photo_teste.jpg', 'wb') as f:
+    #     f.write(get_photos())
+    #     f.close()
